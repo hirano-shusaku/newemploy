@@ -195,7 +195,8 @@ class EmployeController extends Controller
     public function delete($id)
     {
         // dd($id);
-        Employe::onlyTrashed()->whereNotNull('id')->forceDelete();
+        $sakujo = Employe::onlyTrashed()->where('id',$id)->forceDelete();
+        
         return to_route('employe.getDelete')->with('message', '派遣社員を完全に削除しました');
     }
 
@@ -245,8 +246,8 @@ class EmployeController extends Controller
 
     public function index3()
     {
-        $employes = Employe::where('depart' ,'like','開発管理本部%')
-                    ->orwhere('depart', 'like','%コンテンツプロデュース室')
+        $employes = Employe::where('depart' ,'not like','%第2開発1部')
+                    ->where('depart', 'not like','%第2開発2部')
                     ->orderBy('endDay', 'asc')->get();
         //  dd($employes);
         $now = Carbon::now(); // 現在時刻

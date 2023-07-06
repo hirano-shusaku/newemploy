@@ -29,9 +29,9 @@
                         <p class="text-md text-blue-800 font-semibold ">部内回覧先3：{{ $employe->kairan3 }}</p>
                         @endif
 
-                        @if ($employe->kairan3 == null)
+                        @if ($employe->kairan4 == null)
                         @else
-                        <p class="text-md text-blue-800 font-semibold ">部内回覧先4：{{ $employe->kairan3 }}</p>
+                        <p class="text-md text-blue-800 font-semibold ">部内回覧先4：{{ $employe->kairan4 }}</p>
                         @endif
 
                         @if ($employe->kairan5 == null)
@@ -70,7 +70,7 @@
                         @endif
                         
                         <hr class="w-full mt-2">
-                        <p class="mt-2 text-gray-600 py-4">【SOJ】【外注派遣】{{ $employe->job.$employe->name.$employe->term."ヵ月（更新）".$employe->startDay->format('Y月m月d日')."～".$employe->endDay->format('Y月m月d日') }}</p>
+                        <p class="mt-2 text-gray-600 py-4">【SOJ】【外注派遣】{{ $employe->job.$employe->name.$employe->term."ヵ月（更新）".$employe->startDay->format('Y年m月d日')."～".$employe->endDay->format('Y年m月d日') }}</p>
                         <hr class="w-full">
                         <div class="md:flex items-center">
                           <div class="w-full flex flex-col">
@@ -86,7 +86,7 @@
                             <p class="text-gray-600">業務内容：<br>{!! nl2br(e($employe->tcontent)) !!}</p>
 
                             <p class="mt-2 font-bold text-black-800 pt-2">４．契約期間</p>
-                            <p class="text-gray-600">{{ $employe->startDay->format('Y年m月d日') }}～{{ $employe->endDay->format('Y年m日d日')."(".$employe->term."カ月)" }}</p>
+                            <p class="text-gray-600">{{ $employe->startDay->format('Y年m月d日') }}～{{ $employe->endDay->format('Y年m月d日')."(".$employe->term."カ月)" }}</p>
                             <p class="text-gray-600">(契約開始日{{ $employe->firstDay->format('Y年m月d日') }})</p>
                             <p class="text-gray-600">稼働日はセガカレンダーに準拠します</p>
 
@@ -103,7 +103,7 @@
                                     @else
                                     <p class="text-gray-600">※交通費は発生しません</p>
                                     @endif
-                                    <p class="text-gray-600">合計：￥{{ number_format($employe->hcost*$employe->term*1.1 + $employe->tmcost*$employe->term) }}</p>
+                                    <p class="text-gray-600">合計：￥{{ number_format($employe->hcost*$employe->term*1.1 + $employe->tmcost*$employe->term) ."（税込）"}}</p>
                                 @break
                                 @case('時給制')
                                   <p class="text-gray-600">時給：￥{{number_format($employe->hcost)}}（税別）</p>
@@ -154,10 +154,13 @@
                             <p class="mt-2 font-bold text-black-800 pt-2">７．特記事項</p>
                             <p class="text-gray-600">見積書を添付しました。よろしくお願い致します</p> 
                             <hr class="w-full mt-2">
-                            <p class="mt-2 font-bold text-black-800 pt-2">見積書を添付する</p>
+                            @if ($employe->workType == "時給制")
+                            <p class="mt-2 font-bold text-blue-700 pt-2">もし合計金額が0円の場合は『決裁金額なし』</p>
+                            @endif
+                            <p class="font-bold text-black-800 pt-2">見積書を添付する</p>
                             <p class="font-bold text-black-800 pt-2">関連申請を入力する</p>
                             <hr class="w-full mt-2">
-                            <p class="text-black-800 pt-2">摘要：【SOJ】【外注派遣】{{ $employe->job.$employe->name.$employe->term."ヵ月（更新）".$employe->startDay->format('Y月m月d日')."～".$employe->endDay->format('Y月m月d日') }}</p>
+                            <p class="text-black-800 pt-2">摘要：【SOJ】【外注派遣】{{ $employe->job.$employe->name.$employe->term."ヵ月（更新）".$employe->startDay->format('Y年m月d日')."～".$employe->endDay->format('Y年m月d日') }}</p>
                             <p class="text-black-800">費用負担部門：第2事業部 or 第2管理部</p>
                             <p class="text-black-800">取引先：{{ $employe->company }}</p>
                             <p class="text-black-800">プロジェクト：{{ $employe->pname.":". $employe->pnumber }}</p>

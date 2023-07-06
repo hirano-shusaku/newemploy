@@ -106,22 +106,24 @@
 
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="route('employe.index')" :active="request()->routeIs('employe.index')">
-                派遣一覧
+                (全)派遣一覧
             </x-responsive-nav-link>
         </div>
 
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="route('employe.mypost')" :active="request()->routeIs('employe.mypost')">
-                自分で登録した派遣一覧
+                (自)派遣一覧
             </x-responsive-nav-link>
         </div>
 
+        @can('admin')
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="route('profile.index')" :active="request()->routeIs('profile.index')">
                 ユーザー一覧
             </x-responsive-nav-link>
         </div>
-
+        @endcan
+        
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="route('employe.getDelete')" :active="request()->routeIs('employe.getDelete')">
                 <p class="text-red-500">【退職】派遣一覧</p>

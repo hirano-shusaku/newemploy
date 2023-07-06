@@ -70,7 +70,7 @@
                         @endif
                         
                         <hr class="w-full mt-2">
-                        <p class="mt-2 text-gray-600 py-4">【SOJ】【外注派遣】{{ $employe->job.$employe->name.$employe->term."ヵ月（新規）".$employe->startDay->format('Y月m月d日')."～".$employe->endDay->format('Y月m月d日') }}</p>
+                        <p class="mt-2 text-gray-600 py-4">【SOJ】【外注派遣】{{ $employe->job.$employe->name.$employe->term."ヵ月（新規）".$employe->startDay->format('Y年m月d日')."～".$employe->endDay->format('Y年m月d日') }}</p>
                         <hr class="w-full">
                         <div class="md:flex items-center">
                           <div class="w-full flex flex-col">
@@ -152,16 +152,19 @@
                             <p class="text-gray-600">毎月末日締め翌月末日に請求書による支払い</p> 
 
                             <p class="mt-2 font-bold text-black-800 pt-2">７．特記事項</p>
-                            <p class="text-gray-600">見積書を添付しました</p> 
+                            <p class="text-gray-600">見積書を添付しました、よろしくお願いいたします。</p> 
                             <hr class="w-full mt-2">
+                            @if ($employe->workType == "時給制")
+                            <p class="mt-2 font-bold text-blue-700 pt-2">もし合計金額が0円の場合は『決裁金額なし』</p>
+                            @endif
                             <p class="mt-2 font-bold text-black-800 pt-2">見積書を添付する</p>
                             
                             <hr class="w-full mt-2">
-                            <p class="text-black-800 pt-2">摘要：【SOJ】【外注派遣】{{ $employe->job.$employe->name.$employe->term."ヵ月（更新）".$employe->startDay->format('Y月m月d日')."～".$employe->endDay->format('Y月m月d日') }}</p>
+                            <p class="text-black-800 pt-2">摘要：【SOJ】【外注派遣】{{ $employe->job.$employe->name.$employe->term."ヵ月（新規）".$employe->startDay->format('Y年m月d日')."～".$employe->endDay->format('Y年m月d日') }}</p>
                             <p class="text-black-800">費用負担部門：第2事業部 or 第2管理部</p>
                             <p class="text-black-800">取引先：{{ $employe->company }}</p>
                             <p class="text-black-800">プロジェクト：{{ $employe->pname.":". $employe->pnumber }}</p>
-                            <p class="text-black-800">支払予定日：{{ $employe->firstDay->modify('+1 months')->format('Y年m月') }}末日</p>
+                            <p class="text-black-800">支払予定日：{{ $employe->startDay->modify('+1 months')->format('Y年m月') }}末日</p>
                             <p class="text-blue-800">税込金額入力、見積書と同額が確認する</p>
                               
                           </div>

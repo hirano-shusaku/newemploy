@@ -38,7 +38,7 @@
                         <td class="border-gray-light border hover:bg-gray-100 p-3">{{$employ->firstDay->format('Y/m/d')}}</td>
                         <td class="border-gray-light border hover:bg-gray-100 p-3">{{$employ->startDay->format('Y年m月d日')}}</td>
 
-                        @if ($employ->endDay->modify('-1 months -20 days') <= $now)
+                        @if ($employ->endDay->modify('-1 months -25 days') <= $now)
                         <td class="bg-red-400 border-gray-light border hover:bg-blue-300 p-3">{{$employ->endDay->format('Y年m月d日')}}</td>
                         @else
                         <td class="border-gray-light border hover:bg-gray-100 p-3">{{$employ->endDay->format('Y年m月d日')}}</td>

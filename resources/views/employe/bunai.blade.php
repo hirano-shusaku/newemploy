@@ -37,7 +37,7 @@
             ----------------------<br>
             名前：{{ $employe->name }}<br>
             PJ：{{ $employe->pname }} ： {{ $employe->pnumber }}<br>
-            業務内容：{!! nl2br(e($employe->tcontent)) !!}<br>
+            業務内容：<br>{!! nl2br(e($employe->tcontent)) !!}<br>
             ----------------------<br>
             <br>
             お忙しいところ恐れ入りますが、<br>
