@@ -21,6 +21,7 @@ class Employe extends Model
         'firstDay',
         'startDay',
         'endDay'
+        
     ];
     
     public function user()

@@ -196,7 +196,9 @@
 
             <div class="w-full flex flex-col">
               <label for="CostMemo" class="font-semibold leading-none mt-4">派遣料変更の履歴など</label>
-              <p class="pl-4 font-semibold text-gray-600 py-4 bg-rose-200 rounded-lg">{{ $employe->CostMemo }}</p>
+              <p class="pl-4 font-semibold text-gray-600 py-4 bg-rose-200 rounded-lg">
+                {!! nl2br(e($employe->CostMemo)) !!}
+              </p>
             </div>
 
             <div class="md:flex items-center">

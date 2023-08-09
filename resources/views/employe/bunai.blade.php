@@ -16,9 +16,9 @@
           <div class="mt-2">
             宛先：{{ $employe->Cemail }}<br>
             <hr class="border-collapse border border-slate-400 my-4">
-            CC ： {{ $employe->CCmycompany1 }} 　{{ $employe->CCmycompany2 }}　 {{ $employe->CCmycompany3 }}　 {{ $employe->CCmycompany4 }}　 {{ $employe->CCmycompany5 }}　 {{ $employe->CCmycompany6 }} 
+            CC ： {{ $employe->CCmycompany1 }} ;　{{ $employe->CCmycompany2 }};　 {{ $employe->CCmycompany3 }};　 {{ $employe->CCmycompany4 }};　 {{ $employe->CCmycompany5 }};　 {{ $employe->CCmycompany6 }} 
             <hr class="border-collapse border border-slate-400 my-4">
-            <p class="text-md text-gray-700">【派遣】{{ $employe->name }}さんの契約更新・終了のご確認＿ {{  $employe->endDay->format('m月d日') }}以降</p>
+            <p class="text-md text-gray-700">【ご確認】派遣：{{ $employe->name }}さんの契約更新・終了のご確認＿ {{  $employe->endDay->format('m月d日') }}以降</p>
             <hr class="border-collapse border border-slate-400 my-4">
             <p class="mt-2 text-md text-gray-700">{{ $employe->confirmer }}さん</p>
             お疲れ様です、第2管理部の{{ $user->name }}です。<br>
@@ -41,8 +41,8 @@
             ----------------------<br>
             <br>
             お忙しいところ恐れ入りますが、<br>
-            <span class="font-bold text-blue-800">〇月〇日 (〇)までに</span>ご返信頂けますと幸いです。<br>
-            期限までにご返信が難しい場合はご連絡ください。<br>
+            <span class="font-bold text-blue-800">〇月〇日 (〇)を目途に</span>ご返信頂けますと幸いです。<br>
+            
             <br>
             何卒宜しくお願い致します。<br>
 

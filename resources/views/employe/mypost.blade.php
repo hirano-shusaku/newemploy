@@ -7,7 +7,7 @@
       </h2>
       
       <x-index-all-button />
-
+      
     </div>
     <x-input-error class="mb-4" :messages="$errors->all()" />
     <x-message :message="session('message')" />

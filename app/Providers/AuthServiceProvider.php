@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
+use App\Models\Employe;
 
 class AuthServiceProvider extends ServiceProvider
 {
@@ -34,6 +35,22 @@ class AuthServiceProvider extends ServiceProvider
                     return true;
                 }
             }
+            return false;
+        });
+
+        Gate::define('match', function($user)
+        {
+            $employs = Employe::all();
+            // dd($employs,$user);
+                foreach( $employs as $employ)
+                {
+                    
+                    //  dd($employ->user_id,$user->id);
+                    if($employ->user_id === $user->id)
+                    {
+                        return true;
+                    }
+                }
             return false;
         });
     }

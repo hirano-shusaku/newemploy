@@ -5,8 +5,10 @@
       <h2 class="font-semibold text-xl text-gray-800 leading-tight mr-14">
         派遣社員の一覧
       </h2>
-      
+      @can('match')
       <x-index-all-button />
+      @endcan
+      
 
     </div>
     <x-input-error class="mb-4" :messages="$errors->all()" />
@@ -37,7 +39,7 @@
                         <td class="border-gray-light border hover:bg-gray-100 p-3">{{$employ->section}}</td>
                         <td class="border-gray-light border hover:bg-gray-100 p-3">{{$employ->firstDay->format('Y/m/d')}}</td>
                         <td class="border-gray-light border hover:bg-gray-100 p-3">{{$employ->startDay->format('Y年m月d日')}}</td>
-                        @if ($employ->endDay->modify('-1 months -25 days') <= $now)
+                        @if ($employ->endDay->modify('-1 months -27 days') <= $now)
                         <td class="bg-red-400 border-gray-light border hover:bg-blue-300 p-3">{{$employ->endDay->format('Y年m月d日')}}</td>
                         @else
                         <td class="border-gray-light border hover:bg-gray-100 p-3">{{$employ->endDay->format('Y年m月d日')}}</td>

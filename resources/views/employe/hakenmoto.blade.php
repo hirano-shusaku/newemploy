@@ -14,9 +14,9 @@
           <div class="mt-2">
             宛先：{{ $employe->HAemail }}<br>
             <hr class="border-collapse border border-slate-400 my-4">
-            CC ： {{ $employe->CChaken1 }}　{{ $employe->CChaken2 }}　{{ $employe->CChaken3 }}　{{ $employe->CChaken4 }}　 {{ $employe->CChaken5 }}　{{ $employe->CChaken6 }}
+            CC ： {{ $employe->CChaken1 }};　{{ $employe->CChaken2 }};　{{ $employe->CChaken3 }};　{{ $employe->CChaken4 }};　 {{ $employe->CChaken5 }};　{{ $employe->CChaken6 }}
             <hr class="border-collapse border border-slate-400 my-4">
-            <p class="text-md text-gray-700">【セガ】「{{ $employe->name }}さま」の派遣契約につきまして （{{  $employe->startDay->modify('-1 days')->format('m月d日') }}以降）</p>
+            <p class="text-md text-gray-700">【ご確認】セガ：「{{ $employe->name }}さま」の派遣契約につきまして （{{  $employe->startDay->modify('-1 days')->format('m月d日') }}以降）</p>
             <hr class="border-collapse border border-slate-400 my-4">
             <p class="mt-2 text-md text-gray-700">{{ $employe->company }}<br>{{ $employe->HAname }}さま</p>
             お世話になっております。株式会社セガ {{ $user->name }}です。<br>

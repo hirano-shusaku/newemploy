@@ -17,11 +17,13 @@
                     </x-nav-link>
                 </div>
 
+                @can('admin')
                 <div class="hidden space-x-8 sm:-my-px sm:ml-6 sm:flex">
                     <x-nav-link :href="route('employe.index')" :active="request()->routeIs('employe.index')">
                         (全)派遣一覧
                     </x-nav-link>
                 </div>
+                @endcan
 
                 <div class="hidden space-x-8 sm:-my-px sm:ml-6 sm:flex">
                     <x-nav-link :href="route('employe.mypost')" :active="request()->routeIs('employe.mypost')">
