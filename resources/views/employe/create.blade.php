@@ -189,6 +189,14 @@
                 @endif
             </div>
 
+            <div class="w-full flex flex-col">
+              <label for="math" class="font-semibold leading-none mt-4">給与計算方法</label>
+              <textarea name="math" class="w-auto py-2 placeholder-gray-300 border border-gray-300 rounded-md" id="tcontent" cols="30" rows="2">{{ old('math') }}</textarea>
+              @if ($errors->has('math'))
+                  <p class="text-red-600">{{ $errors->first('math') }}</p>
+              @endif
+            </div>
+
             <div class="md:flex items-center">
               <div class="w-full flex flex-col">
                 <label for="HAname" class="font-semibold leading-none mt-4">派遣担当者名</label>

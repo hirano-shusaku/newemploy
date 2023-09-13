@@ -17,14 +17,24 @@
     <div class="my-6">
             <table class="text-left w-full border-collapse mt-8"> 
                     <tr class="bg-blue-700">
-                        <th class="p-3 text-left text-white">派遣会社</th>
+                        <th class="p-3 text-left text-white">
+                          <a class="bg-sky-900 overline" href={{ route('employe.index2company') }}>派遣会社</a>
+                        </th>
                         <th class="p-3 text-left text-white">名前</th>
                         <th class="p-3 text-left text-white">配属部署</th>
-                        <th class="p-3 text-left text-white">セクション</th>
-                        <th class="p-3 text-left text-white">入社日</th>
+                        <th class="p-3 text-left text-white">
+                          <a class="bg-sky-900 overline" href={{ route('employe.index2section') }}>セクション</a>
+                        </th>
+                        <th class="p-3 text-left text-white">
+                          <a class="bg-sky-900 overline" href={{ route('employe.index2fday') }}>入社日</a>
+                        </th>
                         <th class="p-3 text-left text-white">現契約開始日</th>
-                        <th class="p-3 text-left text-white">現契約終了日</th>
-                        <th class="p-3 text-left text-white">派遣料</th>
+                        <th class="p-3 text-left text-white">
+                          <a class="bg-sky-900 overline" href={{ route('employe.index2eday') }}>現契約終了日</a>
+                        </th>
+                        <th class="p-3 text-left text-white">
+                          <a class="bg-sky-900 overline" href={{ route('employe.index2hcost') }}>派遣料</a>
+                        </th>
                         <th class="p-3 text-left text-white">PJ名</th>
                         <th class="p-3 text-left text-white">詳細</th>
                         

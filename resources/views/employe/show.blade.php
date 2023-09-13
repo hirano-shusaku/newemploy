@@ -165,6 +165,11 @@
                 <p class="pl-4 font-semibold text-gray-600 py-4 bg-rose-200 rounded-lg">{!! nl2br(e($employe->tcontent)) !!}</p>
             </div>
 
+            <div class="w-full flex flex-col">
+              <label for="math" class="font-semibold leading-none mt-4">給与計算方法</label>
+              <p class="pl-4 font-semibold text-gray-600 py-4 bg-rose-200 rounded-lg">{!! nl2br(e($employe->math)) !!}</p>
+            </div>
+
             <div class="md:flex items-center">
               <div class="w-full flex flex-col">
                 <label for="HAname" class="font-semibold leading-none mt-4">派遣担当者名</label>

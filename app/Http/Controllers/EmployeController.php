@@ -16,7 +16,206 @@ class EmployeController extends Controller
         $employes = Employe::orderBy('firstDay', 'asc')->get();
         $user = auth()->user();
         $now = Carbon::now(); // 現在時刻
-        return view('employe.index', compact('employes', 'user', 'now'));
+        return view('employe.index.index', compact('employes', 'user', 'now'));
+    }
+
+    public function indexcompany()
+    {
+        $employes = Employe::orderBy('company', 'asc')->get();
+        //$employes = Employe::where('company', 'asc')->get();
+                    //->where('depart', 'not like','%第2開発2部')
+                    //->orderBy('endDay', 'asc')->get();
+        //  dd($employes);
+        $now = Carbon::now(); // 現在時刻
+        return view('employe.index.indexcompany', compact('employes','now'));
+    }
+
+    public function indexsection()
+    {
+        $employes = Employe::orderBy('section', 'asc')->get();
+        // dd($employes);
+        $now = Carbon::now(); // 現在時刻
+        return view('employe.index.indexsection', compact('employes', 'now'));
+    }
+
+    public function indexfday()
+    {
+        $employes = Employe::orderBy('firstDay', 'asc')->get();
+        // dd($employes);
+        $now = Carbon::now(); // 現在時刻
+        return view('employe.index.indexfday', compact('employes', 'now'));
+    }
+
+    public function indexeday()
+    {
+        $employes = Employe::orderBy('endDay', 'asc')->get();
+        // dd($employes);
+        $now = Carbon::now(); // 現在時刻
+        return view('employe.index.indexeday', compact('employes', 'now'));
+    }
+
+    public function indexhcost()
+    {
+        $employes = Employe::orderBy('hcost', 'asc')->get();
+        // dd($employes);
+        $now = Carbon::now(); // 現在時刻
+        return view('employe.index.indexhcost', compact('employes', 'now'));
+    }
+
+    public function index1()
+    {
+        $employes = Employe::where('depart', 'like' ,'%第2開発1部')->orderBy('endDay', 'asc')->get();
+        // dd($employes);
+        $now = Carbon::now(); // 現在時刻
+        return view('employe.index1.index1', compact('employes', 'now'));
+    }
+
+    public function index1company()
+    {
+        $employes = Employe::where('depart', 'like' ,'%第2開発1部')->orderBy('company', 'asc')->get();
+        // dd($employes);
+        $now = Carbon::now(); // 現在時刻
+        return view('employe.index1.index1company', compact('employes', 'now'));
+    }
+
+    public function index1section()
+    {
+        $employes = Employe::where('depart', 'like' ,'%第2開発1部')->orderBy('section', 'asc')->get();
+        // dd($employes);
+        $now = Carbon::now(); // 現在時刻
+        return view('employe.index1.index1section', compact('employes', 'now'));
+    }
+
+    public function index1fday()
+    {
+        $employes = Employe::where('depart', 'like' ,'%第2開発1部')->orderBy('firstDay', 'asc')->get();
+        // dd($employes);
+        $now = Carbon::now(); // 現在時刻
+        return view('employe.index1.index1fday', compact('employes', 'now'));
+    }
+
+    public function index1endDay()
+    {
+        $employes = Employe::where('depart', 'like' ,'%第2開発1部')->orderBy('endDay', 'asc')->get();
+        // dd($employes);
+        $now = Carbon::now(); // 現在時刻
+        return view('employe.index1.index1endDay', compact('employes', 'now'));
+    }
+
+    public function index1hcost()
+    {
+        $employes = Employe::where('depart', 'like' ,'%第2開発1部')->orderBy('hcost', 'asc')->get();
+        // dd($employes);
+        $now = Carbon::now(); // 現在時刻
+        return view('employe.index1.index1hcost', compact('employes', 'now'));
+    }
+
+    public function index2()
+    {
+        $employes = Employe::where('depart', 'like' ,'%第2開発2部')->orderBy('endDay', 'asc')->get();
+        // dd($employes);
+        $now = Carbon::now(); // 現在時刻
+        return view('employe.index2.index2', compact('employes','now'));
+    }
+
+    public function index2company()
+    {
+        $employes = Employe::where('depart', 'like' ,'%第2開発2部')->orderBy('company', 'asc')->get();
+        // dd($employes);
+        $now = Carbon::now(); // 現在時刻
+        return view('employe.index2.index2company', compact('employes', 'now'));
+    }
+
+    public function index2section()
+    {
+        $employes = Employe::where('depart', 'like' ,'%第2開発2部')->orderBy('section', 'asc')->get();
+        // dd($employes);
+        $now = Carbon::now(); // 現在時刻
+        return view('employe.index2.index2section', compact('employes', 'now'));
+    }
+
+    public function index2fday()
+    {
+        $employes = Employe::where('depart', 'like' ,'%第2開発2部')->orderBy('firstDay', 'asc')->get();
+        // dd($employes);
+        $now = Carbon::now(); // 現在時刻
+        return view('employe.index2.index2fday', compact('employes', 'now'));
+    }
+
+    public function index2eday()
+    {
+        $employes = Employe::where('depart', 'like' ,'%第2開発2部')->orderBy('endDay', 'asc')->get();
+        // dd($employes);
+        $now = Carbon::now(); // 現在時刻
+        return view('employe.index2.index2eday', compact('employes', 'now'));
+    }
+
+    public function index2hcost()
+    {
+        $employes = Employe::where('depart', 'like' ,'%第2開発2部')->orderBy('hcost', 'asc')->get();
+        // dd($employes);
+        $now = Carbon::now(); // 現在時刻
+        return view('employe.index2.index2hcost', compact('employes', 'now'));
+    }
+
+    public function index3()
+    {
+        $employes = Employe::where('depart' ,'not like','%第2開発1部')
+                    ->where('depart', 'not like','%第2開発2部')
+                    ->orderBy('endDay', 'asc')->get();
+        //  dd($employes);
+        $now = Carbon::now(); // 現在時刻
+        return view('employe.index3.index3', compact('employes','now'));
+    }
+
+    public function index3company()
+    {
+        $employes = Employe::where('depart' ,'not like','%第2開発1部')
+        ->where('depart', 'not like','%第2開発2部')
+        ->orderBy('company', 'asc')->get();
+        // dd($employes);
+        $now = Carbon::now(); // 現在時刻
+        return view('employe.index3.index3company', compact('employes', 'now'));
+    }
+
+    public function index3section()
+    {
+        $employes = Employe::where('depart' ,'not like','%第2開発1部')
+        ->where('depart', 'not like','%第2開発2部')
+        ->orderBy('section', 'asc')->get();
+        // dd($employes);
+        $now = Carbon::now(); // 現在時刻
+        return view('employe.index3.index3section', compact('employes', 'now'));
+    }
+
+    public function index3fday()
+    {
+        $employes = Employe::where('depart' ,'not like','%第2開発1部')
+        ->where('depart', 'not like','%第2開発2部')
+        ->orderBy('firstDay', 'asc')->get();
+        // dd($employes);
+        $now = Carbon::now(); // 現在時刻
+        return view('employe.index3.index3fday', compact('employes', 'now'));
+    }
+    
+    public function index3eday()
+    {
+        $employes = Employe::where('depart' ,'not like','%第2開発1部')
+        ->where('depart', 'not like','%第2開発2部')
+        ->orderBy('endDay', 'asc')->get();
+        // dd($employes);
+        $now = Carbon::now(); // 現在時刻
+        return view('employe.index3.index3eday', compact('employes', 'now'));
+    }
+
+    public function index3hcost()
+    {
+        $employes = Employe::where('depart' ,'not like','%第2開発1部')
+        ->where('depart', 'not like','%第2開発2部')
+        ->orderBy('hcost', 'asc')->get();
+        // dd($employes);
+        $now = Carbon::now(); // 現在時刻
+        return view('employe.index3.index3hcost', compact('employes', 'now'));
     }
 
     
@@ -79,7 +278,8 @@ class EmployeController extends Controller
             'report3' => $request['report3'],
             'report4' => $request['report4'],
             'report5' => $request['report5'],
-            'report6' => $request['report6']
+            'report6' => $request['report6'],
+            'math' => $request['math']
         ]);
         // dd($employe);
         return to_route('employe.create')->with('message','新規の派遣社員を登録しました');
@@ -162,6 +362,7 @@ class EmployeController extends Controller
         $employe->report4 = $request->report4;
         $employe->report5 = $request->report5;
         $employe->report6 = $request->report6;
+        $employe->math = $request->math;
 
         $employe->save();
         
@@ -228,31 +429,7 @@ class EmployeController extends Controller
         return view('employe.hakenmoto', compact('employe','user'));
     }
 
-    public function index1()
-    {
-        $employes = Employe::where('depart', 'like' ,'%第2開発1部')->orderBy('endDay', 'asc')->get();
-        // dd($employes);
-        $now = Carbon::now(); // 現在時刻
-        return view('employe.index1', compact('employes', 'now'));
-    }
-
-    public function index2()
-    {
-        $employes = Employe::where('depart', 'like' ,'%第2開発2部')->orderBy('endDay', 'asc')->get();
-        // dd($employes);
-        $now = Carbon::now(); // 現在時刻
-        return view('employe.index2', compact('employes','now'));
-    }
-
-    public function index3()
-    {
-        $employes = Employe::where('depart' ,'not like','%第2開発1部')
-                    ->where('depart', 'not like','%第2開発2部')
-                    ->orderBy('endDay', 'asc')->get();
-        //  dd($employes);
-        $now = Carbon::now(); // 現在時刻
-        return view('employe.index3', compact('employes','now'));
-    }
+    
 
     public function mypost()
     {

@@ -72,6 +72,7 @@ class EmployeCreateRequest extends FormRequest
             'report4' => ['string', 'max:100' ,'nullable'],
             'report5' => ['string', 'max:100' ,'nullable'],
             'report6' => ['string', 'max:100' ,'nullable'],
+            'math' => ['string', 'max:3500', 'nullable'],
         ];
     }
 
@@ -125,7 +126,8 @@ class EmployeCreateRequest extends FormRequest
             'report3' => '稟議報告先3',
             'report4' => '稟議報告先4',
             'report5' => '稟議報告先5',
-            'report6' => '稟議報告先6'
+            'report6' => '稟議報告先6',
+            'math' => '給与計算方法'
         ];
         
     }
