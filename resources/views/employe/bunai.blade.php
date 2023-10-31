@@ -35,6 +35,7 @@
             あわせてお知らせください<br>
             <br>
             ----------------------<br>
+            所属派遣会社：{{ $employe->company }}<br>
             名前：{{ $employe->name }}<br>
             PJ：{{ $employe->pname }} ： {{ $employe->pnumber }}<br>
             業務内容：<br>{!! nl2br(e($employe->tcontent)) !!}<br>
