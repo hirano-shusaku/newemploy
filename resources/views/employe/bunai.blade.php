@@ -22,24 +22,26 @@
             <hr class="border-collapse border border-slate-400 my-4">
             <p class="mt-2 text-md text-gray-700">{{ $employe->confirmer }}さん</p>
             お疲れ様です、第2管理部の{{ $user->name }}です。<br>
-            表題の件ですが、下記ご確認の程宜しくお願い致します。<br>
+            下記ご確認の程宜しくお願い致します。<br>
             <br>
-            現在の契約が{{ $employe->endDay->format('Y年m月d日') }}で終了となります「{{ $employe->name }}」さんですが、<br>
-            契約終了後の翌月からの契約の有無をお知らせ頂けますでしょうか。<br>
+            {{ $employe->endDay->format('Y年m月d日') }}で終了となります「{{ $employe->name }}」さんの<br>
+            今後の契約の有無をお知らせ頂けますでしょうか。<br>
             <br>
-            下記のPJコードは現契約のものとなります。<br>
-            PJコードと業務内容に変更がありましたら、お知らせください。<br>
-            延長の場合は期間もお知らせください。<br>
-            <br>
-            また現場担当者からのフィードバックや寸表も（可能であれば）<br>
-            あわせてお知らせください<br>
-            <br>
+            
             ----------------------<br>
             所属派遣会社：{{ $employe->company }}<br>
             名前：{{ $employe->name }}<br>
             PJ：{{ $employe->pname }} ： {{ $employe->pnumber }}<br>
             業務内容：<br>{!! nl2br(e($employe->tcontent)) !!}<br>
             ----------------------<br>
+            <br>
+            延長の場合、契約期間は3か月が基本となります。 <br>
+            契約期間も含め、上記内容を変更する場合はお知らせください<br>          
+            
+            <br>
+            また現場担当者からのフィードバックや寸表も（可能であれば）<br>
+            併せてお知らせください<br>
+            
             <br>
             お忙しいところ恐れ入りますが、<br>
             <span class="font-bold text-blue-800">〇月〇日 (〇)を目途に</span>ご返信頂けますと幸いです。<br>

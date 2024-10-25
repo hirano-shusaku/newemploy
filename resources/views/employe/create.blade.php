@@ -39,8 +39,8 @@
               </div>
 
               <div class="w-full flex flex-col ml-8">
-                <label for="Tnumber" class="font-semibold leading-none mt-4">派遣コード</label>
-                <input type="text" name="Tnumber" class="w-auto py-2 placeholder-gray-300 border border-gray-300 rounded-md" id="Tnumber" placeholder="Enter Title" value="{{ old('Tnumber') }}">
+                <label for="Tnumber" class="font-semibold leading-none mt-4">取引先情報</label>
+                <textarea name="Tnumber" class="w-auto py-2 placeholder-gray-300 border border-gray-300 rounded-md" id="Tnumber" cols="30" rows="2">{{ old('Tnumber') }}</textarea>
                 @if ($errors->has('Tnumber'))
                   <p class="text-red-600">{{ $errors->first('Tnumber') }}</p>
                 @endif

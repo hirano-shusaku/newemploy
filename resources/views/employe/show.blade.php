@@ -7,7 +7,9 @@
     <x-message :message="session('message')" />
   </x-slot>
 
-  <div class="flex justify-center flex-row flex space-x-1">
+  最終更新日（最後に編集した日）：{{ $employe->updated_at->format('Y/m/d') }}  
+
+  <div class="flex justify-center flex-row space-x-1">
     <div class="basis-1/8">
       <a href="{{ route('employe.edit', $employe) }}" >
         <x-primary-button class="bg-teal-600 mt-4 mr-2">編集する</x-primary-button>
@@ -48,7 +50,8 @@
       </a>
     </div>
   </div>
-  
+
+
 
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="mx-4 sm:p-8">
@@ -71,8 +74,10 @@
               </div>
 
               <div class="w-full flex flex-col ml-8">
-                <label for="Tnumber" class="font-semibold leading-none mt-4">派遣コード</label>
-                <p class="pl-4 font-semibold text-gray-600 py-4 bg-rose-200 rounded-lg">{{ $employe->Tnumber }}</p>
+                <label for="Tnumber" class="font-semibold leading-none mt-4">取引先情報</label>
+                <p class="pl-4 font-semibold text-gray-600 py-4 bg-rose-200 rounded-lg">
+                  {!! nl2br(e($employe->Tnumber)) !!}
+                </p>
               </div>
             </div>
 

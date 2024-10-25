@@ -20,15 +20,15 @@
             <hr class="border-collapse border border-slate-400 my-4">
             <p class="mt-2 text-md text-gray-700">{{ $employe->company }}<br>{{ $employe->HAname }}さま</p>
             お世話になっております。株式会社セガ {{ $user->name }}です。<br>
-            表題の件ですが、下記ご確認の程宜しくお願い致します。<br>
+            件名のご契約について下記ご確認くださいませ。<br>
             <br>
-            現在の契約が{{ $employe->startDay->modify('-3 days')->format('Y年m月') }}末日で終了となります「{{ $employe->name }}」さまですが、<br>
+            {{ $employe->startDay->modify('-3 days')->format('Y年m月') }}末日で終了となります「{{ $employe->name }}」さまですが、<br>
             担当者から{{ $employe->term }}ヵ月契約更新の希望がありました。<br>
             <br>
-            つきましては、ご本人にご確認頂き、ご承諾頂けましたら<br>{{ $employe->startDay->format('Y年m月d日') }}～{{ $employe->endDay->format('Y年m月d日') }}（{{ $employe->term }}ヵ月間）のお見積書を<br>ご作成、ご送付頂けますと幸いです。<br>
+            ご本人にご確認頂き、ご承諾頂けましたら<br>{{ $employe->startDay->format('Y年m月d日') }}～{{ $employe->endDay->format('Y年m月d日') }}（{{ $employe->term }}ヵ月間）のお見積書を<br>ご作成、ご送付頂けますと幸いです。<br>
             
             <br>
-            また現場担当者からのフィードバックもございますので、下記ご確認頂き<br>
+            現場担当者からのフィードバックもございますので、下記ご確認頂き<br>
             ご本人にお伝え頂ければ幸いです。<br>
             <br>
             ----------------------<br>

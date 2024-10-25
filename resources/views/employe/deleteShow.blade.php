@@ -7,7 +7,7 @@
     <x-message :message="session('message')" />
   </x-slot>
 
-  <div class="flex justify-center flex-row flex space-x-1">
+  <div class="justify-center flex-row flex space-x-1">
     <form method="get" action="{{route('employe.revival', $employe)}}">
       @csrf
       <x-primary-button class="bg-teal-600 mt-4 mr-2" onClick="return confirm('本当に復活しますか？');">

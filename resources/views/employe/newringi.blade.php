@@ -41,27 +41,27 @@
 
                         @if ($employe->report1 == null)
                         @else
-                        <p class="text-md text-gray-700 font-semibold mt-2">報告先1：{{ $employe->report1 }}</p>
+                        <p class="text-md text-gray-700 font-semibold mt-2">報告先1：　{{ $employe->report1 }}</p>
                         @endif
 
                         @if ($employe->report2 == null)
                         @else
-                        <p class="text-md text-gray-700 font-semibold">報告先2：{{ $employe->report2 }}</p>
+                        <p class="text-md text-gray-700 font-semibold">報告先2：　{{ $employe->report2 }}</p>
                         @endif
 
                         @if ($employe->report3 == null)
                         @else
-                        <p class="text-md text-gray-700 font-semibold">報告先3：{{ $employe->report3 }}</p>
+                        <p class="text-md text-gray-700 font-semibold">報告先3：　{{ $employe->report3 }}</p>
                         @endif
 
                         @if ($employe->report4 == null)
                         @else
-                        <p class="text-md text-gray-700 font-semibold">報告先4：{{ $employe->report4 }}</p>
+                        <p class="text-md text-gray-700 font-semibold">報告先4：　{{ $employe->report4 }}</p>
                         @endif
 
                         @if ($employe->report5 == null)
                         @else
-                        <p class="text-md text-gray-700 font-semibold">報告先5：{{ $employe->report5 }}</p>
+                        <p class="text-md text-gray-700 font-semibold">報告先5：　{{ $employe->report5 }}</p>
                         @endif
 
                         @if ($employe->report6 == null)
@@ -75,18 +75,17 @@
                         <div class="md:flex items-center">
                           <div class="w-full flex flex-col">
                             <p class="mt-2 font-bold text-black-800 pt-2">１．理由・目的</p>
-                            <p class="text-gray-600">{{ $employe->depart." ".$employe->section."において、 人材不足の為、新に". $employe->company ."と「".$employe->name."（".$employe->yomigana."）」氏の派遣契約を締結したく稟議申請致します" }}</p>
+                            <p class="text-gray-600">{{ $employe->depart." ".$employe->section."において、人材不足の為、新に". $employe->company ."と「".$employe->name."（".$employe->yomigana."）」氏の派遣契約を締結したく稟議申請致します" }}</p>
 
                             <p class="mt-2 font-bold text-black-800 pt-2">２．相手先</p>
-                            <p class="text-gray-600">{{ $employe->company }}</p>
-
+                            <p class="text-gray-600">{!! nl2br(e($employe->Tnumber)) !!}</p>
                             <p class="mt-2 font-bold text-black-800 pt-2">３．内容</p>
-                            <p class="text-gray-600">名前：{{ $employe->name }}：{{ $employe->Tnumber ?: ''}}</p>
+                            <p class="text-gray-600">名前：{{ $employe->name }}</p>
                             <p class="text-gray-600">PJ名：{{ $employe->pname }}：{{ $employe->pnumber ?: ''}}</p>
                             <p class="text-gray-600">業務内容：<br>{!! nl2br(e($employe->tcontent)) !!}</p>
 
                             <p class="mt-2 font-bold text-black-800 pt-2">４．契約期間</p>
-                            <p class="text-gray-600">{{ $employe->startDay->format('Y年m月d日') }}～{{ $employe->endDay->format('Y年m日d日')."(".$employe->term."カ月)" }}</p>
+                            <p class="text-gray-600">{{ $employe->startDay->format('Y年m月d日') }}～{{ $employe->endDay->format('Y年m月d日')."(".$employe->term."カ月)" }}</p>
                             <p class="text-gray-600">(契約開始日{{ $employe->firstDay->format('Y年m月d日') }})</p>
                             <p class="text-gray-600">稼働日はセガカレンダーに準拠します</p>
 
@@ -160,11 +159,11 @@
                             <p class="mt-2 font-bold text-black-800 pt-2">見積書を添付する</p>
                             
                             <hr class="w-full mt-2">
-                            <p class="text-black-800 pt-2">摘要：【SOJ】【外注派遣】{{ $employe->job.$employe->name.$employe->term."ヵ月（新規）".$employe->startDay->format('Y年m月d日')."～".$employe->endDay->format('Y年m月d日') }}</p>
+                            <p class="text-black-800 pt-2">摘要：　【SOJ】【外注派遣】{{ $employe->job.$employe->name.$employe->term."ヵ月（新規）".$employe->startDay->format('Y年m月d日')."～".$employe->endDay->format('Y年m月d日') }}</p>
                             <p class="text-black-800">費用負担部門：第2事業部 or 第2管理部</p>
-                            <p class="text-black-800">取引先：{{ $employe->company }}</p>
-                            <p class="text-black-800">プロジェクト：{{ $employe->pname.":". $employe->pnumber }}</p>
-                            <p class="text-black-800">支払予定日：{{ $employe->startDay->modify('+1 months')->format('Y年m月') }}末日</p>
+                            <p class="text-black-800">取引先：　{{ $employe->company }}</p>
+                            <p class="text-black-800">プロジェクト：　{{ $employe->pname.":". $employe->pnumber }}</p>
+                            <p class="text-black-800">支払予定日：　{{ $employe->startDay->modify('+1 months')->format('Y年m月') }}末日</p>
                             <p class="text-blue-800">税込金額入力、見積書と同額が確認する</p>
                               
                           </div>

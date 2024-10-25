@@ -17,6 +17,7 @@
     <div class="my-6">
             <table class="text-left w-full border-collapse mt-8"> 
                     <tr class="bg-blue-700">
+                      <tr class="bg-blue-700">
                         <th class="p-3 text-left text-white">
                           <button type="button" class="text-white bg-green-600 hover:bg-green-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 me-2 dark:bg-green-600 dark:hover:bg-green-700 focus:outline-none dark:focus:ring-green-800">
                             @sortablelink('company', '派遣会社')
@@ -51,7 +52,6 @@
                           </button>
                         </th>
                         <th class="p-3 text-left text-white">詳細</th>
-                        
                     </tr>
                     @foreach($employes as $employ) 
                     <tr class="bg-white">

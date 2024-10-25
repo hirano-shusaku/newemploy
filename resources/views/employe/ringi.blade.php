@@ -78,10 +78,9 @@
                             <p class="text-gray-600">{{ $employe->depart." ".$employe->section."において、 派遣契約を締結しております「".$employe->name."」氏の契約満了に伴い、契約期間を更新したく稟議申請致します" }}</p>
 
                             <p class="mt-2 font-bold text-black-800 pt-2">２．相手先</p>
-                            <p class="text-gray-600">{{ $employe->company }}</p>
-
+                            <p class="text-gray-600">{!! nl2br(e($employe->Tnumber)) !!}</p>
                             <p class="mt-2 font-bold text-black-800 pt-2">３．内容</p>
-                            <p class="text-gray-600">名前：{{ $employe->name }}：{{ $employe->Tnumber ?: ''}}</p>
+                            <p class="text-gray-600">名前：{{ $employe->name }}</p>
                             <p class="text-gray-600">PJ名：{{ $employe->pname }}：{{ $employe->pnumber ?: ''}}</p>
                             <p class="text-gray-600">業務内容：<br>{!! nl2br(e($employe->tcontent)) !!}</p>
 
@@ -160,10 +159,10 @@
                             <p class="font-bold text-black-800 pt-2">見積書を添付する</p>
                             <p class="font-bold text-black-800 pt-2">関連申請を入力する</p>
                             <hr class="w-full mt-2">
-                            <p class="text-black-800 pt-2">摘要：【SOJ】【外注派遣】{{ $employe->job.$employe->name.$employe->term."ヵ月（更新）".$employe->startDay->format('Y年m月d日')."～".$employe->endDay->format('Y年m月d日') }}</p>
+                            <p class="text-black-800 pt-2">摘要：　【SOJ】【外注派遣】{{ $employe->job.$employe->name.$employe->term."ヵ月（更新）".$employe->startDay->format('Y年m月d日')."～".$employe->endDay->format('Y年m月d日') }}</p>
                             <p class="text-black-800">費用負担部門：第2事業部 or 第2管理部</p>
-                            <p class="text-black-800">取引先：{{ $employe->company }}</p>
-                            <p class="text-black-800">プロジェクト：{{ $employe->pname.":". $employe->pnumber }}</p>
+                            <p class="text-black-800">取引先：　{{ $employe->company }}</p>
+                            <p class="text-black-800">プロジェクト：　{{ $employe->pname.":". $employe->pnumber }}</p>
                             <p class="text-black-800">支払予定日：{{ $employe->startDay->modify('+1 months')->format('Y年m月') }}末日</p>
                             <p class="text-blue-800">税込金額入力、見積書と同額が確認する</p>
                               

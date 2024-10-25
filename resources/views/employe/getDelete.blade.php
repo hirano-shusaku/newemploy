@@ -8,6 +8,12 @@
   </x-slot>
 
   <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+      @if (count($trashEmploys)== 0)
+        <p class="mt-4">
+          まだ退職登録している派遣の方は0人です
+        </p>
+      @else
     <div class="my-6">
             <table class="text-left w-full border-collapse mt-8"> 
                     <tr class="bg-red-600">
@@ -43,6 +49,7 @@
                         
                     </tr>
                     @endforeach
+                    @endif
             </table>
         </div>
     </div>
